@@ -2,8 +2,7 @@
 
 public static class SuperCalculator
 {
-    private static Task<int>? task = null;
-    private static Thread? createdThread;
+    private static Task<int>? task = null;    
 
     public static void ActivateSuperComputer()
     {
@@ -14,8 +13,6 @@ public static class SuperCalculator
 
             task = Task.Run(() =>
             {
-                //Console.WriteLine($"\t[Task] Thread ID: {Environment.CurrentManagedThreadId}");
-                //createdThread = Thread.CurrentThread;
                 Task.Delay(15000).Wait();
 
                 // The answer to life, the universe, and everything
@@ -34,10 +31,7 @@ public static class SuperCalculator
     }
 
     public static void CheckSuperComputerStatus()
-    {
-        //Console.WriteLine(createdThread.ThreadState);
-
-
+    {        
         if (task == null)
         {
             Console.WriteLine("\tSuper computer hasn't started thinking yet.");
