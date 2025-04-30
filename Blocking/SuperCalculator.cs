@@ -5,8 +5,7 @@ public static class SuperCalculator
     private static Task<int>? task = null;    
 
     public static void ActivateSuperComputer()
-    {
-        Console.WriteLine($"Current thread ID: {Environment.CurrentManagedThreadId}");
+    {        
         if (task == null)
         {
             Console.WriteLine("\tSuper computer is now processing the Ultimate Question...");
